@@ -8,7 +8,7 @@
         "url": ""
     },
     "dependencies": {
-        "express": "4.4.4",
+        "express": "4.17.1",
         "hbs": "2.4.0",
         "node-mysql": "0.4.2",
         "body-parser": "1.15.2",
