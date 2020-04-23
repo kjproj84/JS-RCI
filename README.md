@@ -32,6 +32,6 @@ sudo ./bin/goreplay --input-file records/record_example1_0.gor --output-http="ht
 
 - You can skip steps 1 and 2 by running only the contraint solving python script.
 ```bash
-python2.7 results/result_datalog.py
+python2.7 results/example1/result_datalog.py
 ```
 
