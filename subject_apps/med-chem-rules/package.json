@@ -15,7 +15,7 @@
   "dependencies": {
     "async": "^2.1.2",
     "cheerio": "^0.22.0",
-    "knex": "^0.12.6",
+    "knex": "^0.21.0",
     "koa": "^1.6.2",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^5.4.2",
