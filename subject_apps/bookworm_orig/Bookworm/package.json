@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "fs": "0.0.2",
-    "jquery": "^2.1.4",
-    "mongoose": "^4.1.10"
+    "jquery": "^3.5.0",
+    "mongoose": "^5.9.10"
   }
 }
