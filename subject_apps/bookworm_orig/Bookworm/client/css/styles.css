@@ -1,0 +1,321 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+}
+
+.header-container {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.header {
+  display: inline-block;
+  font-family: 'Josefin Slab', serif;
+  font-size: 50px;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  letter-spacing: -2px;
+}
+
+.subheader {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  display: inline-block;
+  font-size: 18px;
+  color: #547893;
+}
+
+
+
+/* Shelf Styling by "o'holloran", http://codepen.io/jtholloran/pen/KyvHb */
+
+
+.shelf {
+  display: block;
+  position: relative;
+  width: 80%;
+  height: 20px;
+  margin: 245px auto 0;
+  background-image: -moz-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /*FF3.6+ */
+  background-image: -webkit-gradient(90deg, left top, right bottom, color-stop(0%, #d1d8de), color-stop(100%, #eff1f3));
+  /*Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /*Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(90deg, #d1d8de 0%, #eff1f3 100%);
+  /*IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff1f3', endColorstr='#d1d8de', GradientType='0' );
+  /* IE6-9 */
+  -webkit-box-shadow: 0 2px 2px #708698, 0 4px 0 #abb8c3, 0 20px 30px -8px #000000, transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+  -moz-box-shadow: 0 2px 2px #708698, 0 4px 0 #abb8c3, 0 20px 30px -8px #000000, transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+  box-shadow: 0 2px 2px #708698, 0 4px 0 #abb8c3, 0 20px 30px -8px #000000, transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+}
+.bookend_left {
+  display: block;
+  position: absolute;
+  left: -25px;
+  top: -18px;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+}
+.bookend_left:before {
+  position: absolute;
+  top: 31px;
+  left: 17px;
+  width: 20px;
+  height: 10px;
+  background-color: #ffffff;
+  content: "";
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
+.bookend_right {
+  display: block;
+  position: absolute;
+  right: -25px;
+  top: -18px;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
+.bookend_right:before {
+  position: absolute;
+  top: 31px;
+  right: 17px;
+  width: 20px;
+  height: 10px;
+  background-color: #ffffff;
+  content: "";
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+}
+.shelf .reflection {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 1px;
+  width: 99.8%;
+  height: 1px;
+  background-image: -moz-linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 35%, #ffffff 65%, rgba(255, 255, 255, 0.7) 100%);
+  /*FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #ffffff), color-stop(35%, rgba(255, 255, 255, 0.5)), color-stop(65%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0.7)));
+  /*Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 35%, #ffffff 65%, rgba(255, 255, 255, 0.7) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 35%, #ffffff 65%, rgba(255, 255, 255, 0.7) 100%);
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 35%, #ffffff 65%, rgba(255, 255, 255, 0.7) 100%);
+  /*IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(255, 255, 255, 0.7)', endColorstr='#ffffff', GradientType='0' );
+  /* IE6-9 */
+}
+
+
+
+.shelf-panel {
+  position: absolute;
+  top: 128px;
+  width: 100%;
+  text-align: center;
+}
+
+.book {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 150px;
+  height: 200px;
+  padding: 10px;
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(85, 16, 37), rgb(190, 48, 58)
+    );
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .4);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.book-cover {
+  position: absolute;
+  top: 0px;
+  left: 150px;
+  width: 150px;
+  height: 200px;
+  z-index: 1000;
+}
+
+.theladywiththepetdog {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(85, 16, 37), rgb(190, 48, 58)
+    );
+}
+
+.thedead {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(34, 56, 31), rgb(80, 168, 57)
+    );
+}
+
+.thecaskofamontillado {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(31, 46, 56), rgb(57, 122, 168)
+    );
+}
+
+.theredroom {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(65, 38, 61), rgb(185, 67, 195)
+    );
+}
+
+.thegiftofthemagi {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(131, 57, 21), rgb(224, 119, 33)
+    );
+}
+
+.theyellowwallpaper {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(34, 56, 31), rgb(80, 168, 57)
+    );
+}
+
+.theoffshorepirate {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(85, 16, 37), rgb(190, 48, 58)
+    );
+}
+
+.thebigtripupyonder {
+  background-image:
+    linear-gradient(
+      45deg,
+      rgb(31, 46, 56), rgb(57, 122, 168)
+    );
+}
+
+.book-inner {
+  border: 1px solid rgba(255, 255, 255, .5);
+  padding: 2px;
+  margin: 0px;
+  height: 174px;
+}
+
+.book h1 {
+  font-size: 18px;
+  color: white;
+  text-shadow: 1px 1px 0px black;
+  margin-bottom: 2px;
+  margin-top: 40px;
+}
+
+.book h4 {
+  font-size: 12px;
+  color: white;
+  text-shadow: 1px 1px 0px black;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.carousel-holder {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: 80px;
+}
+
+.data-title-holder {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.data-book-title {
+  margin-top: 20px;
+  font-family: 'Lora', serif;
+  font-size: 40px;
+  display: inline-block;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.data-book-author {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 25px;
+  color: #444444;
+}
+
+.data-book-container {
+  margin: 0;
+  padding: 30px;
+  border: 1px solid #e3e3e3;
+  height: 600px;
+  overflow: scroll;
+  margin-bottom: 100px;
+}
+
+.data-book-container p {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: #444444;
+  line-height: 1.5;
+}
+
+.data-book-length {
+  font-size: 20px;
+}
+
+.data-book-sentence {
+  font-size: 20px;
+}
+
+.data-book-vocab {
+  font-size: 20px;
+}
+
+.green {
+  color: rgb(35, 133, 48);
+}
+
+.blue {
+  color: rgb(33, 98, 145);
+}
+
+.red {
+  color: rgb(147, 45, 45);
+}

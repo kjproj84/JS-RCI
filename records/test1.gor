@@ -1,0 +1,10 @@
+1 2b9e469ea38dbbaa398da9c48682ce4f00404137 1576492770473457000
+GET /properties/1 HTTP/1.1^M
+Host: 127.0.0.1:5000^M
+User-Agent: curl/7.60.0^M
+Accept: */*^M
+Content-Type: application/json^M
+^M
+
+🐵🙈🙉
+

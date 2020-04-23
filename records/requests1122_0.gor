@@ -1,0 +1,18 @@
+1 cfd7c84b63f5c168b460bfe704dbd9d942540a54 1576492408314776000
+GET /properties/1 HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉
+1 7fc485bca6679beda665ff6be2b54f8c6aab0c07 1576492414385070000
+GET /properties/90001 HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉

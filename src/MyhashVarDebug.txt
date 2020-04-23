@@ -1,0 +1,219 @@
+
+1000:var dummyvar;
+1001:var PROPERTIES = require('./mock-properties').data;
+1201:PROPERTIES
+1003:require('./mock-properties')
+1004:require('./mock-properties').data
+1005:data
+1006:function findAll(req, res, next) {
+    var tmpv0 = PROPERTIES;
+    res.json(tmpv0);
+}
+1007:O_findAll
+1206:findAll
+1178:req
+1174:res
+1175:next
+1012:var tmpv0 = PROPERTIES;
+1013:tmpv0
+1014:res.json(tmpv0);
+1015:;
+1016:function findById(req, res, next) {
+    var temp4 = req.params;
+    var idd2 = temp4.id;
+    var temp5 = idd2-1;
+    var temp6 = PROPERTIES[temp5];
+    var tmpv1 = temp6;
+    res.json(tmpv1);
+}
+1017:O_findById
+1210:findById
+1022:var temp4 = req.params;
+1028:temp4
+1134:req.params
+1135:params
+1026:var idd2 = temp4.id;
+1032:idd2
+1028:temp4.id
+1194:id
+1030:var temp5 = idd2-1;
+1039:temp5
+1032:0tempVal
+1034:0tempHash
+1198:undefined
+1036:var temp6 = PROPERTIES[temp5];
+1041:temp6
+1038:PROPERTIES[temp5]
+1039:var tmpv1 = temp6;
+1040:tmpv1
+1041:res.json(tmpv1);
+1042:function findById(req, res, next) {
+     var tmpv13 = req.params;
+     var id = tmpv13.id;
+     var tmpv10 = id - 1;
+     var tmpv2 = PROPERTIES[tmpv10];
+     res.json(tmpv2);
+}
+1046:var tmpv13 = req.params;
+1052:tmpv13
+1050:var id = tmpv13.id;
+1052:tmpv13.id
+1054:var tmpv10 = id - 1;
+1063:tmpv10
+1056:1tempVal
+1058:1tempHash
+1060:var tmpv2 = PROPERTIES[tmpv10];
+1061:tmpv2
+1062:PROPERTIES[tmpv10]
+1063:res.json(tmpv2);
+1064:function getFavorites(req, res, next) {
+    var tmpv3 = favorites;
+    res.json(tmpv3);
+}
+1065:O_getFavorites
+1214:getFavorites
+1070:var tmpv3 = favorites;
+1071:tmpv3
+1168:favorites
+1073:res.json(tmpv3);
+1074:function favorite(req, res, next) {
+    var property = req.body;
+    var exists = false;
+    for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+    }
+    if (!exists) var tmpv4 = property;
+    favorites.push(tmpv4);
+    var tmpv5 = "success";
+    res.send(tmpv5)
+}
+1075:O_favorite
+1218:favorite
+1176:var property = req.body;
+1193:property
+1178:req.body
+1179:body
+1084:var exists = false;
+1109:exists
+1086:2tempVal
+1088:2tempHash
+1090:for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+    }
+1141:var i = 0
+1142:i < favorites.length
+1143:i++
+1158:i
+1095:3tempVal
+1097:3tempHash
+1150:favorites.length
+1151:length
+1102:if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+1103:favorites[i].id === property.id
+1155:favorites[i]
+1193:property.id
+1108:exists = true;
+1109:4tempVal
+1111:4tempHash
+1165:break;
+1114:if (!exists) var tmpv4 = property;
+1115:!exists
+1116:var tmpv4 = property;
+1117:tmpv4
+1118:favorites.push(tmpv4);
+1119:var tmpv5 = "success";
+1120:tmpv5
+1121:5tempVal
+1123:5tempHash
+1125:res.send(tmpv5)
+1126:function unfavorite(req, res, next) {
+    var tmpv14 = req.params;
+var id = tmpv14.id;
+    for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+    }
+    var tmpv8 = favorites;
+res.json(tmpv8)
+}
+1127:O_unfavorite
+1222:unfavorite
+1132:var tmpv14 = req.params;
+1138:tmpv14
+1136:var id = tmpv14.id;
+1138:tmpv14.id
+1140:for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+    }
+1145:6tempVal
+1147:6tempHash
+1152:if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+1153:favorites[i].id == id
+1156:var tmpv6 = i;
+1157:tmpv6
+1158:var tmpv7 = 1;
+1159:tmpv7
+1160:7tempVal
+1162:7tempHash
+1164:favorites.splice(tmpv6, tmpv7);
+1166:var tmpv8 = favorites;
+1167:tmpv8
+1169:res.json(tmpv8)
+1170:function like(req, res, next) {
+    var property = req.body;
+    var tmpv11 = property.id - 1;
+PROPERTIES[tmpv11].likes++;
+    var tmpv12 = property.id - 1;
+var tmpv9 = PROPERTIES[tmpv12].likes;
+res.json(tmpv9);
+}
+1171:O_like
+1226:like
+1180:var tmpv11 = property.id - 1;
+1189:tmpv11
+1184:8tempVal
+1186:8tempHash
+1188:PROPERTIES[tmpv11].likes++;
+1189:PROPERTIES[tmpv11]
+1190:ttemp0
+1191:var tmpv12 = property.id - 1;
+1202:tmpv12
+1195:9tempVal
+1197:9tempHash
+1199:var tmpv9 = PROPERTIES[tmpv12].likes;
+1200:tmpv9
+1201:PROPERTIES[tmpv12]
+1202:res.json(tmpv9);
+1203:exports.findAll = findAll;
+1224:exports
+1207:exports.findById = findById;
+1211:exports.getFavorites = getFavorites;
+1215:exports.favorite = favorite;
+1219:exports.unfavorite = unfavorite;
+1223:exports.like = like;

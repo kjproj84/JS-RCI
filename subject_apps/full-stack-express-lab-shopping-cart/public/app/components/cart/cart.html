@@ -1,0 +1,10 @@
+<section class="container">
+    <button ng-click="$ctrl.getCart();">See Cart</button>
+    <ol class="center">
+        <section ng-repeat="obj in $ctrl.listItems">
+            <li class="title">{{ obj.item }}</li>
+            <p class="info">Price: {{ obj.price }}</p>
+            <p class="info">Quantity: {{ obj.quantity }}</p>
+        </section>
+    </ol>
+</section>

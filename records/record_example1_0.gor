@@ -1,0 +1,45 @@
+1 2b9e469ea38dbbaa398da9c48682ce4f00404137 1576492770473457000
+GET /properties/1 HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉
+1 96b3f239f632a341d2f5b6ca9e02b704e8f91610 1576492788120831000
+GET /properties/JSRCIRestore HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉
+1 755a5a67b55e7f80ede9f980417ae6a3ee0b3973 1576492797290062000
+GET /properties/90001 HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉
+1 da3022cee4b498346b37f495f2681b369b10b583 1576492800752763000
+GET /properties/JSRCIRestore HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉
+1 3142a5e2c5a7a5741c3a0e46a0f1ee09d3b92e10 1576492813213797000
+GET /properties/JSRCIInsourcing HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+
+
+🐵🙈🙉

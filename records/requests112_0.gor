@@ -1,0 +1,10 @@
+1 2c0b5eea369d451c67911625b2d72e96eb2ca255 1576491657147569000
+GET /properties/1 HTTP/1.1
+Host: 127.0.0.1:5000
+User-Agent: curl/7.60.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 40
+
+{"key1":"value1", "key2":"JSRCIRestore"}
+🐵🙈🙉

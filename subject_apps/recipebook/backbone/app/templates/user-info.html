@@ -1,0 +1,9 @@
+<% if (model.get('loggedIn')) { %>
+
+<span class="white">Welcome <%= model.get('name') %></span>&nbsp;|&nbsp;<a href="#logout">Log Out</a>
+
+<% } else { %>
+
+<a href="#login">Login</a>&nbsp;|&nbsp;<a href="#signUp">Sign Up</a>
+
+<% } %>

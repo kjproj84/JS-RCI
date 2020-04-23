@@ -1,0 +1,219 @@
+
+#x03e8:var dummyvar;
+#x03e9:var PROPERTIES = require('./mock-properties').data;
+#x04b1:PROPERTIES
+#x03eb:require('./mock-properties')
+#x03ec:require('./mock-properties').data
+#x03ed:data
+#x03ee:function findAll(req, res, next) {
+    var tmpv0 = PROPERTIES;
+    res.json(tmpv0);
+}
+#x03ef:O_findAll
+#x04b6:findAll
+#x049a:req
+#x0496:res
+#x0497:next
+#x03f4:var tmpv0 = PROPERTIES;
+#x03f5:tmpv0
+#x03f6:res.json(tmpv0);
+#x03f7:;
+#x03f8:function findById(req, res, next) {
+    var temp4 = req.params;
+    var idd2 = temp4.id;
+    var temp5 = idd2-1;
+    var temp6 = PROPERTIES[temp5];
+    var tmpv1 = temp6;
+    res.json(tmpv1);
+}
+#x03f9:O_findById
+#x04ba:findById
+#x03fe:var temp4 = req.params;
+#x0404:temp4
+#x046e:req.params
+#x046f:params
+#x0402:var idd2 = temp4.id;
+#x0408:idd2
+#x0404:temp4.id
+#x04aa:id
+#x0406:var temp5 = idd2-1;
+#x040f:temp5
+#x0408:0tempVal
+#x040a:0tempHash
+#x04ae:undefined
+#x040c:var temp6 = PROPERTIES[temp5];
+#x0411:temp6
+#x040e:PROPERTIES[temp5]
+#x040f:var tmpv1 = temp6;
+#x0410:tmpv1
+#x0411:res.json(tmpv1);
+#x0412:function findById(req, res, next) {
+     var tmpv13 = req.params;
+     var id = tmpv13.id;
+     var tmpv10 = id - 1;
+     var tmpv2 = PROPERTIES[tmpv10];
+     res.json(tmpv2);
+}
+#x0416:var tmpv13 = req.params;
+#x041c:tmpv13
+#x041a:var id = tmpv13.id;
+#x041c:tmpv13.id
+#x041e:var tmpv10 = id - 1;
+#x0427:tmpv10
+#x0420:1tempVal
+#x0422:1tempHash
+#x0424:var tmpv2 = PROPERTIES[tmpv10];
+#x0425:tmpv2
+#x0426:PROPERTIES[tmpv10]
+#x0427:res.json(tmpv2);
+#x0428:function getFavorites(req, res, next) {
+    var tmpv3 = favorites;
+    res.json(tmpv3);
+}
+#x0429:O_getFavorites
+#x04be:getFavorites
+#x042e:var tmpv3 = favorites;
+#x042f:tmpv3
+#x0490:favorites
+#x0431:res.json(tmpv3);
+#x0432:function favorite(req, res, next) {
+    var property = req.body;
+    var exists = false;
+    for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+    }
+    if (!exists) var tmpv4 = property;
+    favorites.push(tmpv4);
+    var tmpv5 = "success";
+    res.send(tmpv5)
+}
+#x0433:O_favorite
+#x04c2:favorite
+#x0498:var property = req.body;
+#x04a9:property
+#x049a:req.body
+#x049b:body
+#x043c:var exists = false;
+#x0455:exists
+#x043e:2tempVal
+#x0440:2tempHash
+#x0442:for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+    }
+#x0475:var i = 0
+#x0476:i < favorites.length
+#x0477:i++
+#x0486:i
+#x0447:3tempVal
+#x0449:3tempHash
+#x047e:favorites.length
+#x047f:length
+#x044e:if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+#x044f:favorites[i].id === property.id
+#x0483:favorites[i]
+#x04a9:property.id
+#x0454:exists = true;
+#x0455:4tempVal
+#x0457:4tempHash
+#x048d:break;
+#x045a:if (!exists) var tmpv4 = property;
+#x045b:!exists
+#x045c:var tmpv4 = property;
+#x045d:tmpv4
+#x045e:favorites.push(tmpv4);
+#x045f:var tmpv5 = "success";
+#x0460:tmpv5
+#x0461:5tempVal
+#x0463:5tempHash
+#x0465:res.send(tmpv5)
+#x0466:function unfavorite(req, res, next) {
+    var tmpv14 = req.params;
+var id = tmpv14.id;
+    for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+    }
+    var tmpv8 = favorites;
+res.json(tmpv8)
+}
+#x0467:O_unfavorite
+#x04c6:unfavorite
+#x046c:var tmpv14 = req.params;
+#x0472:tmpv14
+#x0470:var id = tmpv14.id;
+#x0472:tmpv14.id
+#x0474:for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+    }
+#x0479:6tempVal
+#x047b:6tempHash
+#x0480:if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+#x0481:favorites[i].id == id
+#x0484:var tmpv6 = i;
+#x0485:tmpv6
+#x0486:var tmpv7 = 1;
+#x0487:tmpv7
+#x0488:7tempVal
+#x048a:7tempHash
+#x048c:favorites.splice(tmpv6, tmpv7);
+#x048e:var tmpv8 = favorites;
+#x048f:tmpv8
+#x0491:res.json(tmpv8)
+#x0492:function like(req, res, next) {
+    var property = req.body;
+    var tmpv11 = property.id - 1;
+PROPERTIES[tmpv11].likes++;
+    var tmpv12 = property.id - 1;
+var tmpv9 = PROPERTIES[tmpv12].likes;
+res.json(tmpv9);
+}
+#x0493:O_like
+#x04ca:like
+#x049c:var tmpv11 = property.id - 1;
+#x04a5:tmpv11
+#x04a0:8tempVal
+#x04a2:8tempHash
+#x04a4:PROPERTIES[tmpv11].likes++;
+#x04a5:PROPERTIES[tmpv11]
+#x04a6:ttemp0
+#x04a7:var tmpv12 = property.id - 1;
+#x04b2:tmpv12
+#x04ab:9tempVal
+#x04ad:9tempHash
+#x04af:var tmpv9 = PROPERTIES[tmpv12].likes;
+#x04b0:tmpv9
+#x04b1:PROPERTIES[tmpv12]
+#x04b2:res.json(tmpv9);
+#x04b3:exports.findAll = findAll;
+#x04c8:exports
+#x04b7:exports.findById = findById;
+#x04bb:exports.getFavorites = getFavorites;
+#x04bf:exports.favorite = favorite;
+#x04c3:exports.unfavorite = unfavorite;
+#x04c7:exports.like = like;

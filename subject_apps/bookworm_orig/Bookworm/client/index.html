@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Bookworm" ng-controller="BookwormController">
+  <head>
+    <meta charset="utf-8">
+    <title>Bookworm</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.theme.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/d3pie.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/scripts.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+
+    <div class="header-container">
+      <h1 class="header">Bookworm</h1>
+      <h3 class="subheader">Data insights into classic stories</h3>
+    </div>
+
+    <div class="shelf">
+
+      <div class="bookend_left"></div>
+  	  <div class="bookend_right"></div>
+  	  <div class="reflection"></div>
+
+    </div>
+
+    <div class="shelf-panel">
+      <div class="carousel-holder">
+
+        <div id="owl" class="owl-carousel">
+
+          <div ng-click=" getLadyWithPetDog() " class="book theladywiththepetdog">
+            <img class="book-cover" src="images/theladyandthepetdog.png">
+            <div class="book-inner">
+              <h1 class="title">The Lady with the Pet Dog</h1>
+              <h4 class="author">Anton Chekhov</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheDead() " class="book thedead">
+            <img class="book-cover" src="images/thedead.png">
+            <div class="book-inner">
+              <h1 class="title">The Dead</h1>
+              <h4 class="author">James Joyce</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheCask() " class="book thecaskofamontillado">
+            <img class="book-cover" src="images/thecaskofamontillado.png">
+            <div class="book-inner">
+              <h1 class="title">The Cast of Amontillado</h1>
+              <h4 class="author">Edgar Allan Poe</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheRedRoom() " class="book theredroom">
+            <img class="book-cover" src="images/theredroom.png">
+            <div class="book-inner">
+              <h1 class="title">The Red Room</h1>
+              <h4 class="author">H.G. Wells</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheGiftOfTheMagi() " class="book thegiftofthemagi">
+            <img class="book-cover" src="images/thegiftofthemagi.png">
+            <div class="book-inner">
+              <h1 class="title">The Gift of the Magi</h1>
+              <h4 class="author">O. Henry</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheYellowWallpaper() " class="book theyellowwallpaper">
+            <img class="book-cover" src="images/theyellowwallpaper.png">
+            <div class="book-inner">
+              <h1 class="title">The Yellow Wallpaper</h1>
+              <h4 class="author">Charlotte Perkins Gilman</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheOffshorePirate() " class="book theoffshorepirate">
+            <img class="book-cover" src="images/theoffshorepirate.png">
+            <div class="book-inner">
+              <h1 class="title">The Offshore Pirate</h1>
+              <h4 class="author">F. Scott Fitzgerald</h4>
+            </div>
+          </div>
+
+          <div ng-click=" getTheBigTripUpYonder() " class="book thebigtripupyonder">
+            <img class="book-cover" src="images/thebigtripupyonder.png">
+            <div class="book-inner">
+              <h1 class="title">The Big Trip Up Yonder</h1>
+              <h4 class="author">Kurt Vonnegut</h4>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div ng-show="inUse" class="container main">
+        <div class="data-title-holder">
+          <h1 class="data-book-title"> {{ bookTitle }} </h1>
+        </div>
+        <h3 class="data-book-author">by  {{ bookAuthor }} </h3>
+        <div class="row">
+          <div class="six columns">
+            <p class="data-book-length"> Length: <span class="green">{{ bookLength }}</span> words </p>
+            <p class="data-book-sentence"> Avg. Sentence Length: <span class="red">{{ sentenceAverage }}</span> words </p>
+            <p class="data-book-vocab"> Vocabulary: <span class="blue">{{ vocabulary }}</span> unique words | <span class="green">{{ ((vocabulary / bookLength) * 100).toFixed(2) }}%</span></p>
+
+            <div id="dialogueChart"></div>
+            <div id="puncChart"></div>
+            <p> Periods: {{ periods }} | Commas: {{ commas }} | Exclamation Points: {{ exclamations }} | Question Marks: {{ questions }} | Colons: {{ colons }} | Semicolons: {{ semicolons }}  | Dashes: {{ dashes }} </p>
+          </div>
+          <div class="six columns">
+            <div class="data-book-container">
+              <p> {{ book }} </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </body>
+</html>

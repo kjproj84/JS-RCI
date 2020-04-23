@@ -1,0 +1,344 @@
+<!doctype html>
+<html data-ng-app="RecipeBook">
+<!--[if lt IE 8]><html class="lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Recipe Book</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+	<div class="headerContainer">
+		<div class="header">
+			<div class="row">
+
+				<div class="six	columns">
+
+					<a href="#/" class="fa-icon-home white">&nbsp;&nbsp;Home</a>
+				</div>
+
+				<div class="six	columns">
+					<div id="userInfo" ng-controller="UserController" class="right">
+						<div ng-show="isLoggedIn">
+							Welcome {{ user }} &nbsp;|&nbsp; <a href="#/logout">Logout</a>
+						</div>
+						<div ng-show="!isLoggedIn">
+							<a href="#/login">Login</a> &nbsp;|&nbsp; <a href="#/signup">Sign Up</a>
+						</div>
+					</div>
+				</div>		
+
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="contentContainer">      
+	<div class="row">   
+		<div class="twelve columns">
+			<div class="postContent">   
+				<h1>Recipe Book</h1>
+				<div id="message"></div>
+				<div data-ng-view=""></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footerContainer">
+		<div class="footer">
+			<div class="row"></div>
+		</div>
+	</div>
+</footer>
+
+
+<!-- App scripts -->
+<script src="app/libs/angular1.1.4.js"></script>
+<script src="app/libs/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alasql@0.5"></script>
+<!-- Main scripts -->
+<script src="app/app.js"></script>
+<script src="app/config.js"></script>
+<script src="app/router.js"></script>
+
+<!-- Services -->
+<script src="app/services/users.js"></script> 
+<script src="app/services/recipes.js"></script>  
+<script src="app/services/ingredients.js"></script>  
+<script src="app/services/directions.js"></script>  
+<script src="app/services/helpers.js"></script>  
+
+<!-- Controllers -->
+<script src="app/controllers/LoginControllers.js"></script>    
+<script src="app/controllers/HomeController.js"></script> 
+<script src="app/controllers/RecipeControllers.js"></script> 
+<script src="app/controllers/IngredientControllers.js"></script>
+<script src="app/controllers/DirectionControllers.js"></script> 
+
+<!-- Directives -->
+<script src="app/directives/fadeout.js"></script>
+<script>
+
+alasql("CREATE TABLE recipes (id INT, user_id INT, name STRING)");
+alasql("INSERT INTO recipes VALUES (1,1, 'Burger')");
+alasql("INSERT INTO recipes VALUES (2,1, 'Cake')");
+
+alasql("CREATE TABLE directions (id INT, recipe_id INT, name STRING)");
+alasql("INSERT INTO directions VALUES (1, 1, 'Grill')");
+alasql("INSERT INTO directions VALUES (2, 1, 'Eat!')");
+alasql("INSERT INTO directions VALUES (3, 2, 'Bake')");
+alasql("INSERT INTO directions VALUES (4, 2, 'Enjoy')");
+
+alasql("CREATE TABLE ingredients (id INT, recipe_id INT, name STRING)");
+alasql("INSERT INTO ingredients VALUES (1, 1, 'Meat')");
+alasql("INSERT INTO ingredients VALUES (2, 1, 'Cheese')");
+alasql("INSERT INTO ingredients VALUES (3, 1, 'Tomato')");
+alasql("INSERT INTO ingredients VALUES (4, 1, 'Onion')");
+alasql("INSERT INTO ingredients VALUES (5, 1, 'Lettuce')");
+alasql("INSERT INTO ingredients VALUES (6, 1, 'Pickle')");
+alasql("INSERT INTO ingredients VALUES (7, 2, 'Butter')");
+alasql("INSERT INTO ingredients VALUES (8, 2, 'Flour')");
+alasql("INSERT INTO ingredients VALUES (9, 2, 'Frosting')");
+alasql("INSERT INTO ingredients VALUES (10, 2, 'Sugar')");
+
+	var tmpv4 = "SELECT * FROM recipes";
+	var results = alasql(tmpv4);
+	console.log(results);
+
+	abcDe2({ 'id': 2, 'name': "test" });
+
+
+/**
+function abcDe(input){
+	var tmpv22 = "INSERT INTO `recipes` SET ";
+	var tmpv23 = { 'user_id': undefined, 'name': undefined };
+	var tmpv42 = input;
+	var tmpv61 = tmpv42.id;
+	tmpv23['user_id'] = tmpv61;
+	var tmpv43 = input;
+	var tmpv62 = tmpv43.name;
+	tmpv23['name'] = tmpv62;
+	var result = alasql(tmpv22+tmpv23);
+	var tmpv21 = {
+                    'id': undefined,
+                    'name': undefined
+                };
+	var tmpv63 = result.insertId;
+	tmpv21['id'] = tmpv63;
+	var tmpv45 = request.body;
+	var tmpv64 = tmpv45.name;
+	tmpv21['name'] = tmpv64;
+	var output = tmpv21;
+	return output;
+}
+**/
+
+
+function abcDe2(input){
+	var tmpv22 = "INSERT INTO `recipes` VALUES ";
+	var tmpv23 = { 'user_id': undefined, 'name': undefined };
+	var tmpv42 = input;
+	var tmpv61 = tmpv42.id;
+	tmpv23['user_id'] = tmpv61;
+	var tmpv43 = input;
+	var tmpv62 = tmpv43.name;
+	tmpv23['name'] = tmpv62;
+	var result = alasql(tmpv22+JSON.stringify(tmpv23));//concat sql clause
+	var tmpv21 = {
+                    'id': undefined,
+                    'name': undefined
+                };
+	var tmpv63 = result;
+	tmpv21['id'] = tmpv63;
+	var tmpv45 = input;
+	var tmpv64 = tmpv45.name;
+	tmpv21['name'] = tmpv64;
+	var output = tmpv21;
+	console.log(output);
+	return output;
+}
+function abcDe(){
+	var tmpv4 = "SELECT * FROM recipes";
+	var results = alasql(tmpv4);
+	var data=[];
+        results.forEach(function(item, index) {
+            var tmpv2 = {
+                'id': undefined,
+                'name': undefined
+            };
+        var tmpv55 = item['id'];
+        tmpv2['id'] = tmpv55;
+        var tmpv56 = item['name'];
+        tmpv2['name'] = tmpv56;
+        data.push(tmpv2)
+        });
+        var tmpv3 = data;
+        var output = tmpv3;
+	return output;
+}
+function abcDe2(input) {
+    var tmpv35 = input;
+    var tmpv34 = `DELETE FROM recipes WHERE id = ${tmpv35}; DELETE FROM ingredients WHERE recipe_id = ${tmpv35}; DELETE FROM directions WHERE recipe_id = ${tmpv35}`;
+    var results = alasql(tmpv34);
+    var tmpv33 = {};
+    var output = tmpv33;
+    return output;
+}
+function ccc(input){
+    	var tmpv46 = input;
+		var tmpv47 = input;
+		var tmpv29 = [tmpv46.name, tmpv47.id];
+        var tmpv28 = `UPDATE recipes SET name = ${tmpv29[0]} WHERE id = ${tmpv29[1]}`;
+		var result = alasql(tmpv28);
+    	var tmpv27 = {
+                    'id': undefined,
+                    'name': undefined
+                };
+		var tmpv49 = input;
+		var tmpv65 = tmpv49.id;
+		tmpv27['id'] = tmpv65;
+		var tmpv50 = input;
+		var tmpv66 = tmpv50.name;
+		tmpv27['name'] = tmpv66;
+		var output = tmpv27;
+		return output;
+}
+function bbb(input){
+	var tmpv17 = input;
+	var tmpv16 = `SELECT * FROM recipes WHERE id = ${tmpv17}`;
+	var results = alasql(tmpv16);
+	var tmpv59 = results[0]['id'];
+	tmpv15['id'] = tmpv59;
+	var tmpv60 = results[0]['name'];
+	tmpv15['name'] = tmpv60;
+	var output = tmpv15;
+	return output;
+}
+
+
+function direction1(input){
+		var tmpv5 = input;
+        var tmpv4 = `SELECT * FROM `directions` WHERE recipe_id = ${tmpv5}`;
+		var results = alasql(tmpv4);
+		var data = [];
+		results.forEach(function(item, index) {
+							var tmpv2 = {
+								'id': undefined,
+								'recipe_id': undefined,
+								'name': undefined
+							};
+				var tmpv39 = item['id'];
+				tmpv2['id'] = tmpv39;
+				var tmpv40 = item['recipe_id'];
+				tmpv2['recipe_id'] = tmpv40;
+				var tmpv41 = item['name'];
+				tmpv2['name'] = tmpv41;
+				data.push(tmpv2)
+		});
+		var tmpv3 = data;
+	var output = tmpv3;
+	return output;
+}
+function direction2(input){
+        var tmpv10 = 'INSERT INTO `directions` VALUES ';
+		var tmpv11 = { 'recipe_id': undefined, 'name': undefined };
+		var tmpv27 = input;
+		var tmpv42 = tmpv27.recipeId;
+		tmpv11['recipe_id'] = tmpv42;
+		var tmpv28 = input;
+		var tmpv43 = tmpv28.name;
+		tmpv11['name'] = tmpv43;
+		var result = alasql(tmpv10+JSON.stringify(tmpv11));
+		var tmpv9 = {
+			'id': undefined,
+			'recipe_id': undefined,
+			'name': undefined
+		};
+		var tmpv44 = result;
+		tmpv9['id'] = tmpv44;
+		var tmpv30 = request.body;
+		var tmpv45 = tmpv30.recipeId;
+		tmpv9['recipe_id'] = tmpv45;
+		var tmpv31 = input;
+		var tmpv46 = tmpv31.name;
+		tmpv9['name'] = tmpv46;
+		var output = tmpv9;
+		return output;
+}
+function direction3(input){
+	var tmpv32 = input;
+	var tmpv33 = input;
+	var tmpv17 = [tmpv32.name, tmpv33.id];
+	var tmpv16 = `UPDATE directions SET name = ${tmpv17[1]} WHERE id = ${tmpv17[1]}`;
+	var result = alasql(tmpv16);
+	var tmpv15 = {
+                    'id': undefined,
+                    'name': undefined
+	};
+	var tmpv35 = input;
+	var tmpv47 = tmpv35.id;
+	tmpv15['id'] = tmpv47;
+	var tmpv36 = input;
+	var tmpv48 = tmpv36.name;
+	tmpv15['name'] = tmpv48;
+	var output = tmpv15;
+	return output;
+}
+function direction3(input){
+	var tmpv32 = input;
+	var tmpv33 = input;
+	var tmpv17 = [tmpv32.name, tmpv33.id];
+	var tmpv16 = `UPDATE directions SET name = ${tmpv17[1]} WHERE id = ${tmpv17[1]}`;
+	var result = alasql(tmpv16);
+	var tmpv15 = {
+                    'id': undefined,
+                    'name': undefined
+	};
+	var tmpv35 = input;
+	var tmpv47 = tmpv35.id;
+	tmpv15['id'] = tmpv47;
+	var tmpv36 = input;
+	var tmpv48 = tmpv36.name;
+	tmpv15['name'] = tmpv48;
+	var output = tmpv15;
+	return output;
+}
+function direction4(input) {
+    	var tmpv23 = input;
+        var tmpv22 = `DELETE FROM directions WHERE id = ${tmpv23}`;
+		var results = alasql(tmpv22);
+        db.query(tmpv22, tmpv23, function (error, results, fields) {
+		var tmpv21 = {};
+		var output = tmpv21;
+		return output;
+}
+
+console.log(abcDe());
+console.log(abcDe2(1));
+      const IS_SYNC = true;
+	  if (IS_SYNC) {
+	  	var out_abcDe= abcDe();
+		var data = out_abcDe;
+	  }//default: non-blocking async using Promise
+		else {
+          new Promise((resolve, reject) => {
+              var out_abcDe = abcDe();
+              resolve(out_abcDe);
+          }).then(
+              res => {
+                  var data = res;
+                  console.log("promise", data);
+              });
+      }
+
+</script>
+
+</body>
+</html>

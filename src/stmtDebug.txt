@@ -1,0 +1,538 @@
+
+#x0000 // VariableDeclaration : var dummyvar; at -1:-1     12249359
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 11792735
+
+Succ: #x0001
+IDOM: #xffffffff
+IPDOM: #x0001
+#x0001 // VariableDeclaration : var PROPERTIES = require('./mock-properties').data; at -1:65     11792735
+VariableDeclaration::pred:: 12249359type    VariableDeclaration
+
+Pred: #x0000
+::Succ:: 7764248
+
+Succ: #x0002
+IDOM: #x0000
+IPDOM: #x0002
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-11792735
+-@-@-@-274632
+#x0002 // FunctionDeclaration: function findAll at -1:174     7764248
+FunctionDeclaration
+Pred: #x0001, #x0004
+::Succ:: 12789830
+
+Succ: #x0005
+IDOM: #x0001
+IPDOM: #x0005
+#x0003 // VariableDeclaration : var tmpv0 = PROPERTIES; at -1:151     13448116
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 274632
+
+Succ: #x0004
+IDOM: none
+IPDOM: #x0004
+#x0004 // ExpressionStatement : res.json(tmpv0); at -1:172     274632
+ExpressionStatement::pred:: 13448116type    VariableDeclaration
+
+Pred: #x0003
+::Succ:: 7764248
+
+Succ: #x0002
+IDOM: none
+IPDOM: #x0002
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-12789830
+-@-@-@-9061960
+#x0006 // FunctionDeclaration: function findById at -1:371     7157176
+FunctionDeclaration
+Pred: #x0005, #x000c
+::Succ:: 1452657
+
+Succ: #x000d
+IDOM: #x0005
+IPDOM: #x000d
+#x0007 // VariableDeclaration : var temp4 = req.params; at -1:241     12543405
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 8934986
+
+Succ: #x0008
+IDOM: none
+IPDOM: #x0008
+#x0008 // VariableDeclaration : var idd2 = temp4.id; at -1:266     8934986
+VariableDeclaration::pred:: 12543405type    VariableDeclaration
+
+Pred: #x0007
+::Succ:: 12744701
+
+Succ: #x0009
+IDOM: none
+IPDOM: #x0009
+#x0009 // VariableDeclaration : var temp5 = idd2-1; at -1:290     12744701
+VariableDeclaration::pred:: 8934986type    VariableDeclaration
+
+Pred: #x0008
+::Succ:: 2861573
+
+Succ: #x000a
+IDOM: none
+IPDOM: #x000a
+#x000a // VariableDeclaration : var temp6 = PROPERTIES[temp5]; at -1:325     2861573
+VariableDeclaration::pred:: 12744701type    VariableDeclaration
+
+Pred: #x0009
+::Succ:: 10166722
+
+Succ: #x000b
+IDOM: none
+IPDOM: #x000b
+#x000b // VariableDeclaration : var tmpv1 = temp6; at -1:348     10166722
+VariableDeclaration::pred:: 2861573type    VariableDeclaration
+
+Pred: #x000a
+::Succ:: 9061960
+
+Succ: #x000c
+IDOM: none
+IPDOM: #x000c
+#x000c // ExpressionStatement : res.json(tmpv1); at -1:369     9061960
+ExpressionStatement::pred:: 10166722type    VariableDeclaration
+
+Pred: #x000b
+::Succ:: 7157176
+
+Succ: #x0006
+IDOM: none
+IPDOM: #x0006
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-7157176
+-@-@-@-16420138
+#x000d // FunctionDeclaration: function findById at -1:578     1452657
+FunctionDeclaration
+Pred: #x0006, #x0012
+::Succ:: 13925057
+
+Succ: #x0013
+IDOM: #x0006
+IPDOM: #x0013
+#x000e // VariableDeclaration : var tmpv13 = req.params; at -1:466     8191392
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 3652677
+
+Succ: #x000f
+IDOM: none
+IPDOM: #x000f
+#x000f // VariableDeclaration : var id = tmpv13.id; at -1:491     3652677
+VariableDeclaration::pred:: 8191392type    VariableDeclaration
+
+Pred: #x000e
+::Succ:: 10524447
+
+Succ: #x0010
+IDOM: none
+IPDOM: #x0010
+#x0010 // VariableDeclaration : var tmpv10 = id - 1; at -1:517     10524447
+VariableDeclaration::pred:: 3652677type    VariableDeclaration
+
+Pred: #x000f
+::Succ:: 9086252
+
+Succ: #x0011
+IDOM: none
+IPDOM: #x0011
+#x0011 // VariableDeclaration : var tmpv2 = PROPERTIES[tmpv10]; at -1:554     9086252
+VariableDeclaration::pred:: 10524447type    VariableDeclaration
+
+Pred: #x0010
+::Succ:: 16420138
+
+Succ: #x0012
+IDOM: none
+IPDOM: #x0012
+#x0012 // ExpressionStatement : res.json(tmpv2); at -1:576     16420138
+ExpressionStatement::pred:: 9086252type    VariableDeclaration
+
+Pred: #x0011
+::Succ:: 1452657
+
+Succ: #x000d
+IDOM: none
+IPDOM: #x000d
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-1452657
+-@-@-@-5925490
+#x0013 // FunctionDeclaration: function getFavorites at -1:671     13925057
+FunctionDeclaration
+Pred: #x000d, #x0015
+::Succ:: 12713834
+
+Succ: #x0016
+IDOM: #x000d
+IPDOM: #x0016
+#x0014 // VariableDeclaration : var tmpv3 = favorites; at -1:648     2307296
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 5925490
+
+Succ: #x0015
+IDOM: none
+IPDOM: #x0015
+#x0015 // ExpressionStatement : res.json(tmpv3); at -1:669     5925490
+ExpressionStatement::pred:: 2307296type    VariableDeclaration
+
+Pred: #x0014
+::Succ:: 13925057
+
+Succ: #x0013
+IDOM: none
+IPDOM: #x0013
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-13925057
+-@-@-@-3835515
+#x0016 // FunctionDeclaration: function favorite at -1:1034     12713834
+FunctionDeclaration
+Pred: #x0013, #x0026
+::Succ:: 8694452
+
+Succ: #x0027
+IDOM: #x0013
+IPDOM: #x0027
+#x0017 // VariableDeclaration : var property = req.body; at -1:737     16454299
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 11298465
+
+Succ: #x0018
+IDOM: none
+IPDOM: #x0018
+#x0018 // VariableDeclaration : var exists = false; at -1:761     11298465
+VariableDeclaration::pred:: 16454299type    VariableDeclaration
+
+Pred: #x0017
+::Succ:: 3258234
+
+Succ: #x0019
+IDOM: none
+IPDOM: #x0019
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-11298465
+-@-@-@-3386855
+#x0019 // ForStatement : for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        }
+    } at -1:919     3258234
+ForStatement
+Pred: #x0018, #x001d
+::Succ:: 12249359
+
+Succ: #x001d, #x0021
+IDOM: none
+IPDOM: #x0021
+#x001a // VariableDeclaration : var i = 0 at -1:780     7656591
+VariableDeclaration
+Pred: none
+Succ: none
+IDOM: none
+IPDOM: none
+#x001d // IfStatement : if (favorites[i].id === property.id) {
+            exists = true;
+            break;
+        } at -1:913     3386855
+IfStatement::pred:: 3258234type    ForStatement
+
+Pred: #x0019
+::Succ:: 12249359
+
+Succ: #x001f, #x0019
+IDOM: none
+IPDOM: #x0019
+#x001f // ExpressionStatement : exists = true; at -1:884     13169751
+ExpressionStatement::pred:: 3386855type    IfStatement
+
+Pred: #x001d
+::Succ:: 15475221
+
+Succ: #x0020
+IDOM: none
+IPDOM: none
+#x0021 // IfStatement : if (!exists) var tmpv4 = property; at -1:958     8794878
+IfStatement::pred:: 3258234type    ForStatement
+
+Pred: #x0019
+::Succ:: 12249359
+
+Succ: #x0023, #x0024
+IDOM: none
+IPDOM: #x0024
+#x0023 // VariableDeclaration : var tmpv4 = property; at -1:958     6067884
+VariableDeclaration::pred:: 8794878type    IfStatement
+
+Pred: #x0021
+Succ: none
+IDOM: none
+IPDOM: none
+#x0024 // ExpressionStatement : favorites.push(tmpv4); at -1:985     2917541
+ExpressionStatement::pred:: 8794878type    IfStatement
+
+Pred: #x0021
+::Succ:: 16486349
+
+Succ: #x0025
+IDOM: none
+IPDOM: #x0025
+#x0025 // VariableDeclaration : var tmpv5 = "success"; at -1:1012     16486349
+VariableDeclaration::pred:: 2917541type    ExpressionStatement
+
+Pred: #x0024
+::Succ:: 3835515
+
+Succ: #x0026
+IDOM: none
+IPDOM: #x0026
+#x0026 // ExpressionStatement : res.send(tmpv5) at -1:1032     3835515
+ExpressionStatement::pred:: 16486349type    VariableDeclaration
+
+Pred: #x0025
+::Succ:: 12713834
+
+Succ: #x0016
+IDOM: none
+IPDOM: #x0016
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-12713834
+-@-@-@-3529495
+#x0027 // FunctionDeclaration: function unfavorite at -1:1363     8694452
+FunctionDeclaration
+Pred: #x0016, #x0035
+::Succ:: 6171334
+
+Succ: #x0036
+IDOM: #x0016
+IPDOM: #x0036
+#x0028 // VariableDeclaration : var tmpv14 = req.params; at -1:1102     3866620
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 13252147
+
+Succ: #x0029
+IDOM: none
+IPDOM: #x0029
+#x0029 // VariableDeclaration : var id = tmpv14.id; at -1:1122     13252147
+VariableDeclaration::pred:: 3866620type    VariableDeclaration
+
+Pred: #x0028
+::Succ:: 6693734
+
+Succ: #x002a
+IDOM: none
+IPDOM: #x002a
+---------------------------------------------------------2, [object Object],[object Object]
+-@-@-@-13252147
+-@-@-@-14681442
+#x002a // ForStatement : for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        }
+    } at -1:1318     6693734
+ForStatement
+Pred: #x0029, #x002e
+::Succ:: 12249359
+
+Succ: #x002e, #x0034
+IDOM: none
+IPDOM: #x0034
+#x002b // VariableDeclaration : var i = 0 at -1:1141     7182631
+VariableDeclaration
+Pred: none
+Succ: none
+IDOM: none
+IPDOM: none
+#x002e // IfStatement : if (favorites[i].id == id) {
+            var tmpv6 = i;
+
+var tmpv7 = 1;
+favorites.splice(tmpv6, tmpv7);
+            break;
+        } at -1:1312     14681442
+IfStatement::pred:: 6693734type    ForStatement
+
+Pred: #x002a
+::Succ:: 12249359
+
+Succ: #x0030, #x002a
+IDOM: none
+IPDOM: #x002a
+#x0030 // VariableDeclaration : var tmpv6 = i; at -1:1235     11744646
+VariableDeclaration::pred:: 14681442type    IfStatement
+
+Pred: #x002e
+::Succ:: 8148782
+
+Succ: #x0031
+IDOM: none
+IPDOM: none
+#x0031 // VariableDeclaration : var tmpv7 = 1; at -1:1251     8148782
+VariableDeclaration::pred:: 11744646type    VariableDeclaration
+
+Pred: #x0030
+::Succ:: 12631527
+
+Succ: #x0032
+IDOM: none
+IPDOM: none
+#x0032 // ExpressionStatement : favorites.splice(tmpv6, tmpv7); at -1:1283     12631527
+ExpressionStatement::pred:: 8148782type    VariableDeclaration
+
+Pred: #x0031
+::Succ:: 9580834
+
+Succ: #x0033
+IDOM: none
+IPDOM: none
+#x0034 // VariableDeclaration : var tmpv8 = favorites; at -1:1345     2032007
+VariableDeclaration::pred:: 6693734type    ForStatement
+
+Pred: #x002a
+::Succ:: 3529495
+
+Succ: #x0035
+IDOM: none
+IPDOM: #x0035
+#x0035 // ExpressionStatement : res.json(tmpv8) at -1:1361     3529495
+ExpressionStatement::pred:: 2032007type    VariableDeclaration
+
+Pred: #x0034
+::Succ:: 8694452
+
+Succ: #x0027
+IDOM: none
+IPDOM: #x0027
+---------------------------------------------------------3, [object Object],[object Object],[object Object]
+-@-@-@-8694452
+-@-@-@-12615171
+-@-@-@-12530485
+#x0036 // FunctionDeclaration: function like at -1:1578     6171334
+FunctionDeclaration
+Pred: #x0027, #x0039, #x003c
+::Succ:: 13115399
+
+Succ: #x003d
+IDOM: #x0027
+IPDOM: #x003d
+#x0037 // VariableDeclaration : var property = req.body; at -1:1425     1103933
+VariableDeclaration
+Pred: #xffffffff
+::Succ:: 15664719
+
+Succ: #x0038
+IDOM: none
+IPDOM: #x0038
+#x0038 // VariableDeclaration : var tmpv11 = property.id - 1; at -1:1459     15664719
+VariableDeclaration::pred:: 1103933type    VariableDeclaration
+
+Pred: #x0037
+::Succ:: 12615171
+
+Succ: #x0039
+IDOM: none
+IPDOM: #x0039
+#x0039 // ExpressionStatement : PROPERTIES[tmpv11].likes++; at -1:1487     12615171
+ExpressionStatement::pred:: 15664719type    VariableDeclaration
+
+Pred: #x0038
+::Succ:: 12249359
+
+Succ: #x003a, #x0036
+IDOM: none
+IPDOM: #x0036
+#x003a // VariableDeclaration : var tmpv12 = property.id - 1; at -1:1521     3824475
+VariableDeclaration::pred:: 12615171type    ExpressionStatement
+
+Pred: #x0039
+::Succ:: 13583297
+
+Succ: #x003b
+IDOM: none
+IPDOM: #x003b
+#x003b // VariableDeclaration : var tmpv9 = PROPERTIES[tmpv12].likes; at -1:1559     13583297
+VariableDeclaration::pred:: 3824475type    VariableDeclaration
+
+Pred: #x003a
+::Succ:: 12530485
+
+Succ: #x003c
+IDOM: none
+IPDOM: #x003c
+#x003c // ExpressionStatement : res.json(tmpv9); at -1:1576     12530485
+ExpressionStatement::pred:: 13583297type    VariableDeclaration
+
+Pred: #x003b
+::Succ:: 6171334
+
+Succ: #x0036
+IDOM: none
+IPDOM: #x0036
+#x003d // ExpressionStatement : exports.findAll = findAll; at -1:1606     13115399
+ExpressionStatement
+Pred: #x0036
+::Succ:: 12249359
+
+Succ: #x003e, [ Program ]
+IDOM: #x0036
+IPDOM: [ Program ]
+#x003e // ExpressionStatement : exports.findById = findById; at -1:1635     2894091
+ExpressionStatement::pred:: 13115399type    ExpressionStatement
+
+Pred: #x003d
+::Succ:: 12249359
+
+Succ: #x003f, [ Program ]
+IDOM: #x003d
+IPDOM: [ Program ]
+#x003f // ExpressionStatement : exports.getFavorites = getFavorites; at -1:1672     13991534
+ExpressionStatement::pred:: 2894091type    ExpressionStatement
+
+Pred: #x003e
+::Succ:: 12249359
+
+Succ: #x0040, [ Program ]
+IDOM: #x003e
+IPDOM: [ Program ]
+#x0040 // ExpressionStatement : exports.favorite = favorite; at -1:1701     15601589
+ExpressionStatement::pred:: 13991534type    ExpressionStatement
+
+Pred: #x003f
+::Succ:: 12249359
+
+Succ: #x0041, [ Program ]
+IDOM: #x003f
+IPDOM: [ Program ]
+#x0041 // ExpressionStatement : exports.unfavorite = unfavorite; at -1:1734     3219521
+ExpressionStatement::pred:: 15601589type    ExpressionStatement
+
+Pred: #x0040
+::Succ:: 12249359
+
+Succ: #x0042, [ Program ]
+IDOM: #x0040
+IPDOM: [ Program ]
+#x0042 // ExpressionStatement : exports.like = like; at -1:1755     11149526
+ExpressionStatement::pred:: 3219521type    ExpressionStatement
+
+Pred: #x0041
+::Succ:: 12249359
+
+Succ: [ Program ]
+IDOM: #x0041
+IPDOM: [ Program ]

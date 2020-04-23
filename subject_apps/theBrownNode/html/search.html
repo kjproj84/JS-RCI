@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Searchin' for love</title>
+</head>
+<body>
+  <!--ul>
+    <li>
+      <label for="firstName">First Name</label><input type="text" name="firstName" id="firstName" />
+    </li>
+    <li>
+      <label for="lastName">Last Name</label><input type="text" name="lastName" id="lastName" />
+    </li>
+    <li>
+      <input type="button" id="search" value="Search" />
+    </li>
+  </ul-->
+  <div id="results"></div>
+  <div id="testsDiv"></div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function logging(log, input, output){
+       console.log("LOC: "+log, "input ", input, "output ", output);
+       var log_out =[{"id":1,"firstName":"Caroline","lastName":"Kingsley","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"caroline@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/caroline_kingsley.jpg"},{"id":2,"firstName":"Michael","lastName":"Jones","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"michael@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/michael_jones.jpg"},{"id":3,"firstName":"Jonathan","lastName":"Bradley","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"jonathan@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/jonathan_bradley.jpg"},{"id":4,"firstName":"Jennifer","lastName":"Wu","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"jen@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/jennifer_wu.jpg"},{"id":5,"firstName":"Olivia","lastName":"Green","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"olivia@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/olivia_green.jpg"},{"id":6,"firstName":"Miriam","lastName":"Aupont","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"miriam@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/miriam_aupont.jpg"},{"id":7,"firstName":"Michelle","lastName":"Lambert","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"michelle@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/michelle_lambert.jpg"},{"id":8,"firstName":"Victor","lastName":"Ochoa","title":"Senior Broker","phone":"617-244-3672","mobilePhone":"617-244-3672","email":"victor@ionicrealty.com","picture":"https://s3-us-west-1.amazonaws.com/sfdc-demo/people/victor_ochoa.jpg"}]
+	if(_.isEqual(output, log_out)){
+		console.log("EQULLLA: ",log);
+	}
+
+   }
+   window.logging = logging;
+  </script>
+
+  <script type="text/javascript" src=./js/mysearch.js>
+
+	console.log("testinggggg");
+
+</script>
+
+
+  <!--<script type="text/javascript" src="/js/testing.js"></script>-->
+<script type="text/javascript" charset="utf-8">
+/**
+$(function() {
+//    $("#search").click(function() {
+        $.ajax({
+            url: 'http://127.0.0.1:3001/users/search',
+            data: {
+                firstName: $('#firstName').val(),
+                lastName: $('#lastName').val()
+            },
+            type: 'POST',
+            success: function(data) {
+                $('#results').text(JSON.stringify(data));
+            },
+	    datatype='jsonp'
+        })
+//    });
+});
+**/
+/**
+        console.log("started");
+    $.ajax({
+    //url: 'http://'+Migrator.domain+'/migrator/interp.php',   //proxy page
+    //             url: 'http://128.173.239.239/migrator/interp.php',   //proxy page
+    // url: 'http://128.173.239.239:1340',   //proxy page
+    url: 'http://127.0.0.1:3001/users/search',
+    type: 'GET',      //POST method
+   // async: false,      //ajax sync
+        // url: "/users/add",
+        // method: "post",
+        data: {name: "first guy",
+            p1:"p1",
+            p2:"p2",
+            p3:"p3"
+        },
+    // data: '{name: "first guy"},
+    // dataType : 'jsonp',   //you may use jsonp for cross origin request
+    // data:'Migrator.getFunctionThisObject("'+funcName+'");'+funcName+' = '+functionString+';',
+    success: function(msg) {
+//   var stop = process.hrtime();
+//   var stopstop = stop[0]*1e9 + stop[1];
+ //  var startstart = start[0]*1e9 + start[1];
+   // var aaa = (stopstop-startstart);
+   // console.log("aaaa  "+aaa+"ns  ,"+aaa/1000000+"ms");
+    console.log("success    "+msg);
+    },
+    dataType: "json"
+    });
+**/
+   
+</script>
+</body>
+</html>

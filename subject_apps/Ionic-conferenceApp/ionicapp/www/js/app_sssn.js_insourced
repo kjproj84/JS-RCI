@@ -1,0 +1,244 @@
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ionic','ngResource'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+  if (window.cordova && window.cordova.plugins.Keyboard) {
+    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    cordova.plugins.Keyboard.disableScroll(true);
+
+  }
+  if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('app.browse', {
+    url: '/browse',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/browse.html',
+        controller : 'ListController'
+      }
+    }
+  })
+  .state('app.sessions', {
+    url: "/sessions",
+    views: {
+      'menuContent' :{
+        templateUrl: "templates/sessions.html",
+        controller: "SessionListCtrl"
+      }
+    }
+  })
+
+  .state('app.session', {
+    url: "/sessions/:sessionId",
+    views: {
+      'menuContent' :{
+        templateUrl: "templates/session.html",
+        controller: "SessionCtrl"
+      }
+    }
+  })
+  .state('app.speakers', {
+    url: "/speakers",
+    views: {
+      'menuContent' :{
+        templateUrl: "templates/speakers.html",
+        controller: "SpeakerListCtrl"
+      }
+    }
+  })
+
+  .state('app.speaker', {
+    url: "/speakers/:speakerId",
+    views: {
+      'menuContent' :{
+        templateUrl: "templates/speaker.html",
+        controller: "SpeakerCtrl"
+      }
+    }
+  });
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/browse');
+})
+.constant('SERVER_PATH','http://localhost:5000')
+ // Services
+ .factory('Speaker', function ($http, $rootScope, SERVER_PATH) {
+  return {
+    all: function() {
+      return $http.get(SERVER_PATH + '/speakers');
+    },
+    get: function(speakerId) {
+      return $http.get(SERVER_PATH + '/speakers/' + speakerId);
+    }
+  };
+})
+ .factory('Session', function ($resource) {
+  return $resource('http://localhost:5000/sessions/:sessionId');
+})
+    //Controllers
+    .controller('SpeakerListCtrl', function ($scope, Speaker, SERVER_PATH) {
+      $scope.serverPath = SERVER_PATH;
+      $scope.speakers = [];
+
+      Speaker.all().success(function(speakers) {
+        $scope.speakers = speakers;
+      });
+      $scope.doRefresh = function() {
+        $scope.speakers = Speaker.all().success(function(speakers) {
+          $scope.speakers = speakers;
+          $scope.$broadcast('scroll.refreshComplete');
+        });
+      };
+    })
+
+    .controller('SpeakerCtrl', function ($scope, $stateParams, Speaker, SERVER_PATH) {
+      $scope.serverPath = SERVER_PATH;
+      Speaker.get($stateParams.speakerId).success(function(speaker) {
+        $scope.speaker = speaker;
+      });
+    })
+
+    .controller('SessionListCtrl', function ($scope, Session, SERVER_PATH) {
+      $scope.serverPath = SERVER_PATH;
+      //@insourcing(func:null,input:null,output:$scope.sessions)
+      
+   //insourced by JS-RCI
+   var component_ekaDIrW= function component_ekaDIrW(){
+    var sessions = [
+        {
+            id: 0,
+            title: 'Native-Like PhoneGap Apps with Ionic',
+            speaker: 'Christophe Coenraets',
+            pic: 'christophe.jpg',
+            time: '3:00pm',
+            room: 'Theater',
+            twitter_id: '@ccoenraets',
+            description: 'In this workshop we\u2019ll build a full-blown mobile application from scratch for a real world scenario using PhoneGap and the Ionic+AngularJS framework stack.'
+        },
+        {
+            id: 1,
+            title: 'Choosing a UI Framework',
+            speaker: 'Holly Schinsky',
+            pic: 'holly.jpg',
+            time: '9:00am',
+            room: 'Ballroom A',
+            twitter_id: '@devgirlfl',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+        },
+        {
+            id: 2,
+            title: 'Plugin Architecture',
+            speaker: 'Michael Brooks',
+            pic: 'mwbrooks.jpeg',
+            time: '11:00am',
+            room: 'Ballroom C',
+            twitter_id: '@mwbrooks',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        },
+        {
+            id: 3,
+            title: 'PhoneGap Build: Building without an SDK',
+            speaker: 'Brett Rudd',
+            pic: 'brett.jpg',
+            time: '2:00pm',
+            room: 'Ballroom D',
+            twitter_id: '@brettrudd',
+            description: 'This presentation will cover the features of the service, focusing on some of our new-ish features such as our oath support, plugins and debugging. There will also be some exclusive sneak peeks of new features revolved around external and private plugins that will hopefully be open for immediate beta testing!  We\u2019ll end on discussing the future and what is on our roadmap in the coming months.'
+        },
+        {
+            id: 4,
+            title: 'Many Views: Third Party WebViews on Android',
+            speaker: 'Joe Bowser',
+            pic: 'joe_bowser.jpg',
+            time: '1:00pm',
+            room: 'Ballroom B',
+            twitter_id: '@infil00p',
+            description: 'Learn about the recent changes in Cordova, and how developers now have the option to use Mozilla\'s GeckoView in addition to Intel Crosswalk and the default Android WebView on Cordova.  This new feature coming to Cordova on Android finally gives developers a way out of previously irritating bugs that there was no way to work around.  This will go over the ups and downs of developing for different webviews, as well as a demo showing the power of this new feature.'
+        },
+        {
+            id: 5,
+            title: 'PhoneGap Roadmap',
+            speaker: 'Brian Leroux',
+            pic: 'brian_leroux.jpg',
+            time: '10:00am',
+            room: 'Ballroom F',
+            twitter_id: '@brianleroux',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+        },
+        {
+            id: 6,
+            title: 'Intro to AngularJS',
+            speaker: 'Holly Schinsky',
+            pic: 'holly.jpg',
+            time: '4:45pm',
+            room: 'Ballroom A',
+            twitter_id: '@devgirlfl',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+        },
+        {
+            id: 7,
+            title: 'Workshop: Intro to PhoneGap',
+            speaker: 'Michael Brooks',
+            pic: 'mwbrooks.jpeg',
+            time: '10:00am',
+            room: 'Theater',
+            twitter_id: '@mwbrooks',
+            description: 'This workshop will provide an introduction to PhoneGap, the philosophy behind it and how to get started quickly using a variety of different tools available. The CLI, PhoneGap Developer App, PhoneGap Build and more will be shown and you will learn about the many frameworks available to choose from when building your mobile apps. You will also be shown debugging techniques and walk away with a solid understanding of what PhoneGap is all about.'
+        },
+        {
+            id: 8,
+            title: 'Architecting PhoneGap Apps ',
+            speaker: 'Christophe Coenraets',
+            pic: 'christophe.jpg',
+            time: '1:00pm',
+            room: 'Theater',
+            twitter_id: '@ccoenraets',
+            description: 'Learn how to architect large, complex, and native-like PhoneGap apps using HTML, JavaScript, and CSS. We will investigate mobile challenges and find solutions for them as well as learn all about Single Page Architecture, HTML templates, effective touch events, performance techniques, MVC Frameworks and more.'
+        },
+        {
+            id: 9,
+            title: 'Workshop: PhoneGap and Firefox OS',
+            speaker: 'Jason Weathersby',
+            pic: 'jasonweathersby.jpeg',
+            time: '3:00pm',
+            room: 'Theater',
+            twitter_id: '@jasonweathersby',
+            description: 'We\'ll begin with the current status of the Firefox OS Cordova integration, including demos of building and debugging basic Cordova Apps using Firefox\u2019s new Web IDE. The rest of the workshop will be hands-on: we\'ll help you run your app on a Firefox OS device.'
+        }
+    ];
+    var output = sessions;
+    return output;
+}
+        $scope.sessions=component_ekaDIrW();
+
+   /**
+$scope.sessions = Session.query();
+   **/
+    })
+
+    .controller('SessionCtrl', function ($scope, $stateParams, Session, SERVER_PATH) {
+      $scope.serverPath = SERVER_PATH;
+      $scope.session = Session.get({sessionId: $stateParams.sessionId});
+    });
